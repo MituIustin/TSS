@@ -3,11 +3,11 @@ describe('Mouseover Clicks', () => {
     cy.visit('/mouseover');
 
     for (let i = 0; i < 10; i++) {
-      cy.xpath("//a[text()='Click me']").click();
+      cy.contains('a', 'Click me').click();
     }
 
     for (let i = 0; i < 7; i++) {
-      cy.xpath("//a[text()='Link Button']").click();
+      cy.contains('a', 'Link Button').click();
     }
 
     cy.get('#clickCount').should('have.text', '10');

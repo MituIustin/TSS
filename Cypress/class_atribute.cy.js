@@ -1,11 +1,15 @@
 describe('Class Attribute Playground', () => {
-  it('verifies class attribute changes on button click', () => {
-    cy.visit('/classattr');
+  it('identifică butonul după clasa btn-primary și gestionează alerta', () => {
+    cy.visit('http://uitestingplayground.com/classattr');
 
-    const btn = cy.get('#testClass');
+    cy.window().then((win) => {
+      cy.stub(win, 'alert').as('alertStub')
+    });
 
-    btn.should('have.class', 'btn-primary');
-    btn.click();
-    btn.should('have.class', 'btn-danger');
+    cy.get('button.btn-primary')
+      .should('exist')
+      .click();
+
+    cy.get('@alertStub').should('have.been.calledOnce');
   });
 });
