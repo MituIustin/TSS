@@ -21,6 +21,8 @@ Deschideti un **terminal** si rulati urmatoarele comenzi:
 - Pentru a rula un test anume ``npx cypress run --spec "cypress/e2e/nume_test.cy.js"``
 - Pentru a rula toate testele ``npx cypress run``
 - Pentru a rula testele folosind interfata grafica ``npx cypress open``
+
+  
 [Demo](https://www.youtube.com/watch?v=qGcGWmhK5-o)
 
 ## Descriere generala
