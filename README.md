@@ -4,6 +4,25 @@ Acest proiect contine o prima faza a unei aplicatii de testare automata a interf
 
 > Aplicatia web nu ne apartine, si o folosim doar in scopul testarii
 
+## Setup
+1. Apasati pe **setup.sh** -> **Download raw file**
+2. Mutati fisierul intr-un folder gol.
+3. Inainte de rularea fisierului aveti nevoie de [node js](https://nodejs.org/en) si [git](https://git-scm.com/downloads)
+4. Deschideti un terminal git in folderul gol in care se afla fisierul setup.sh
+5. In terminal-> ``bash setup.sh``
+
+[Tutorial video](https://www.youtube.com/watch?v=Yc4wgG6KJAw)
+
+
+Se va clona repo-ul in folderul respectiv si se vor adauga toate dependetele necesare. Pe langa asta toate testele vor fi rulate.
+
+Daca deja aveti clonat repo-ul.
+Deschideti un **terminal** si rulati urmatoarele comenzi:
+- Pentru a rula un test anume ``npx cypress run --spec "cypress/e2e/nume_test.cy.js"``
+- Pentru a rula toate testele ``npx cypress run``
+- Pentru a rula testele folosind interfata grafica ``npx cypress open``
+[Demo](https://www.youtube.com/watch?v=qGcGWmhK5-o)
+
 ## Descriere generala
 
 Scopul aplicatiei este de a testa automat diverse functionalitati din site-ul [UI Testing Playground](http://uitestingplayground.com), care este o aplicatie demonstrativa conceputa special pentru practici si exercitii de testare automata a interfetei grafice (UI).
@@ -47,7 +66,7 @@ Cypress este un framework modern pentru testare end-to-end, axat pe aplicatii sc
 | **Documentatie**            | Documentatie buna, cu multe exemple de cod.                                                                                                         | Documentatie decenta, dar nu la fel de clara sau completa ca la Cypress.                                                                                               |
 | **Comunitate si suport**    | Comunitate in crestere.                                                                                                                              | Comunitate matura, cu multe resurse si solutii existente.                                                                                                               |
 
-[Selenium vs Cypress](https://www.testim.io/blog/cypress-vs-selenium/)
+[Selenium vs Cypress](https://www.testim.io/blog/cypress-vs-selenium/)[3]
 
 ## De ce am ales Selenium?
 
@@ -57,7 +76,47 @@ Am ales **Selenium** pentru ca:
 - Este mai flexibil si potrivit pentru proiecte care pot include si testarea backend-ului sau integrarea in pipeline-uri CI/CD mai complexe
 - Framework-ul este matur, stabil si bine sustinut in ecosistemele enterprise
 
+## Experinta de testare folosind Cypress
+Am testat initial si Cypress, iar experienta a fost una foarte placuta. Este un tool modern, cu o interfata interactiva excelenta, extrem de prietenos pentru dezvoltatori. Ne-a impresionat in special modul in care ofera feedback vizual in timp real si functionalitatea de time-travel debugging, care ne-a permis sa inspectam fiecare pas al executiei testelor cu usurinta. Este rapid, simplu de instalat si se integreaza bine in fluxurile de lucru front-end.
 
+Cu toate acestea, dupa o analiza mai ampla, am decis sa mergem pe Selenium, deoarece ofera o flexibilitate mai mare in ceea ce priveste limbajele de programare (noi folosim Python), suportul extins pentru toate browserele majore. Fiind un framework matur si stabil, Selenium se potriveste mai bine cerintelor si arhitecturii proiectului nostru.
+
+
+## Teste create folosind AI
+
+Am incercat sa creeam cateva teste folosind [CHAT-GPT](https://chatgpt.com/share/68264646-44c8-800a-919f-4893befb1e8d)
+
+Am vrut sa testam apasarea anumitor butoane folosind __Cypress__.
+Testul generat de AI se afla in Cypress/ai_alerts.cy.js
+Din pacate acest test nu a functionat:
+<br>
+![image](https://github.com/user-attachments/assets/14ec9f51-9720-4948-96bc-2a5ad702cd65)
+<br>
+Prompt-urile folosite:
+<br>
+![image](https://github.com/user-attachments/assets/372158f7-187e-4d48-a563-9544960e6797)
+<br>
+<br>
+Al doilea test a fost pentru "Non-Breaking Space"
+<br>
+Promptul folosit:
+<br>
+![image](https://github.com/user-attachments/assets/3dc9b6e9-1346-4b7c-bd8c-5c5b63d33e43)
+<br>
+Acest test a reusit, si am reusit sa testam "Non-Breaking Space"
+<br>
+
+
+
+## Referințe
+
+[1] Selenium Official Docs - https://www.selenium.dev/documentation
+<br>
+[2] Cypress Docs - https://docs.cypress.io
+<br>
+[3] Testim Blog - Cypress vs Selenium - https://www.testim.io/blog/cypress-vs-selenium/
+<br>
+[4] ChatGPT – https://chat.openai.com
 
 ---
 
